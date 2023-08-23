@@ -12,6 +12,7 @@ ExplorerPlus is a unique file explorer application designed to provide enhanced 
 - **Standalone Executable Support:** ExplorerPlus is specifically designed to work with standalone executables.
 - **Log File Generation:** Automatically generates a log file named timestamp_log.log that captures actions performed on files, such as opening and closing.
 - **Command Prompt Integration:** Right-click on a file to open it in a command prompt window.
+- **Run with Arguments:** Addiconal menu option allows users to execute files with custom command-line arguments. This is especially useful for executables that require additional parameters.
 - **User-Friendly Interface:** Clean and intuitive design that makes file browsing a breeze.
 
 ### Getting Started
