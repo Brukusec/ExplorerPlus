@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace ExplorerPlus
 {
@@ -190,5 +191,58 @@ namespace ExplorerPlus
                 }
             }
         }
+         /// <summary>
+         /// 
+         /// </summary>
+         /// <param </param>
+         /// 
+         /// <param name=></param>
+        // Handle the CMD with arguments context menu item click
+        private void RunWithArgsMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView.SelectedItems.Count > 0)
+            {
+                var selectedItem = listView.SelectedItems[0];
+                var path = selectedItem.Tag.ToString();
+
+                if (!Directory.Exists(path))
+                {
+                    string inputArgs = Microsoft.VisualBasic.Interaction.InputBox("Enter arguments for the executable:", "Arguments", "");
+
+                    var tempFolder = Path.Combine("C:\\", Path.GetRandomFileName());
+                    Directory.CreateDirectory(tempFolder);
+
+                    var tempFilePath = Path.Combine(tempFolder, Path.GetFileName(path));
+                    File.Copy(path, tempFilePath);
+
+                    var cmdProcess = new System.Diagnostics.Process
+                    {
+                        StartInfo = new System.Diagnostics.ProcessStartInfo("cmd.exe", $"/k cd {tempFolder} & {Path.GetFileName(tempFilePath)} {inputArgs}"),
+                        EnableRaisingEvents = true
+                    };
+
+                    cmdProcess.Exited += (s, args) =>
+                    {
+                        // Log the action
+                        LogAction("Cmd Closed with Args", Path.GetFileName(path));
+                        try
+                        {
+                            File.Delete(tempFilePath);
+                            Directory.Delete(tempFolder);
+                        }
+                        catch
+                        {
+                            // Handle errors if necessary
+                        }
+                    };
+
+                    cmdProcess.Start();
+                    // Log the action
+                    LogAction($"Cmd Opened with Args: {inputArgs}", Path.GetFileName(path));
+                }
+            }
+        }
+
+
     }
 }

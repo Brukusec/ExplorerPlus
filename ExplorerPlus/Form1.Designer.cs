@@ -13,6 +13,8 @@ namespace ExplorerPlus
         private System.Windows.Forms.TextBox pathTextBox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem cmdMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem runWithArgsMenuItem;
+
 
         /// <summary>
         /// Clean up any resources being used.
@@ -43,6 +45,8 @@ namespace ExplorerPlus
             this.pathTextBox = new System.Windows.Forms.TextBox();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmdMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.runWithArgsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
 
             // Configure form
             this.SuspendLayout();
@@ -115,7 +119,8 @@ namespace ExplorerPlus
 
             // Configure contextMenuStrip
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-                this.cmdMenuItem
+                this.cmdMenuItem,
+                this.runWithArgsMenuItem
             });
             this.contextMenuStrip.Name = "contextMenuStrip";
             this.contextMenuStrip.Size = new System.Drawing.Size(100, 26);
@@ -123,8 +128,15 @@ namespace ExplorerPlus
             // Configure cmdMenuItem
             this.cmdMenuItem.Name = "cmdMenuItem";
             this.cmdMenuItem.Size = new System.Drawing.Size(99, 22);
-            this.cmdMenuItem.Text = "CMD";
+            this.cmdMenuItem.Text = "cmd";
             this.cmdMenuItem.Click += new System.EventHandler(this.CmdMenuItem_Click);
+
+            // runWithArgsMenuItem
+            this.runWithArgsMenuItem.Name = "runWithArgsMenuItem";
+            this.runWithArgsMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.runWithArgsMenuItem.Text = "Run cmd with Arguments...";
+            this.runWithArgsMenuItem.Click += new System.EventHandler(this.RunWithArgsMenuItem_Click);
+
 
             // Add context menu to listView
             this.listView.ContextMenuStrip = this.contextMenuStrip;
