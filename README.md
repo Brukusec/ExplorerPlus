@@ -49,7 +49,7 @@ git clone https://github.com/Brukusec/ExplorerPlus.git
 1. Navigate through directories using the main interface.
 1. Use the back button to return to the previous directory.
 1. Double-click on a file to open it.
-1. Right-click on a file and select '**CMD**' to open it in a command prompt window.
+1. Right-click on a file and select '**cmd**' to open it in a command prompt window or '**Run cmd with arguments**' to execute the file with additional parameters/arguments
 1. Check the '**timestamp_log.log**' file in the application's directory for a log of actions performed.
 
 ### License
