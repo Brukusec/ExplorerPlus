@@ -27,7 +27,7 @@ If you wish to compile ExplorerPlus from source, follow these steps:
 
 #### Prerequisites
 - Visual Studio (2019 or newer recommended)
-- .NET Framework (version used in the project)
+- .NET Framework 4.7.2
 
 #### Steps
 1. Clone the Repository:
