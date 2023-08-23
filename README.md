@@ -2,7 +2,9 @@
 
 ExplorerPlus is a unique file explorer application designed to provide enhanced functionality over traditional file explorers. It offers a clean interface, easy navigation, and additional features such as logging, command prompt integration, and execution from randomized locations.
 
-ExplorerPlus Screenshot <!-- You can replace 'screenshot.png' with the path to an actual screenshot of your application if you have one. -->
+<p align="center">
+<img src="https://github.com/Brukusec/ExplorerPlus/blob/master/Explorer.jpg" width="50%" height="50%">
+</p>
 
 ### Features
 - **Back Navigation:** Easily navigate back to the previous directory.
